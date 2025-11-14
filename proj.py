@@ -8,7 +8,7 @@ def allChainedPathsAreShort(n):
     limit = n // 2
     xs = range(1, 1 + n)
     shuffled = sample(xs, k=n)
-    
+
     # A cycle of boxes, drawn from a shuffled
     # sample, which includes the given target.
     def cycleIncluding(target):
@@ -55,7 +55,11 @@ def fName(f):
 
 # Just :: a -> Maybe a
 def Just(x):
-
+    '''Constructor for an inhabited Maybe (option type) value.
+       Wrapper containing the result of a computation.
+    '''
+    return {'type': 'Maybe', 'Nothing': False, 'Just': x}
+    
 def Nothing():
 
 def difference(xs):
